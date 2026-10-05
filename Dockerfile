@@ -1,12 +1,11 @@
-# Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY ["Strategies.Api.csproj", "./"]
-RUN dotnet restore "Strategies.Api.csproj"
+COPY ["Strategies.Api/Strategies.Api.csproj", "Strategies.Api/"]
+RUN dotnet restore "Strategies.Api/Strategies.Api.csproj"
 COPY . .
+WORKDIR "/src/Strategies.Api"
 RUN dotnet publish "Strategies.Api.csproj" -c Release -o /app/publish
 
-# Runtime Stage
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
