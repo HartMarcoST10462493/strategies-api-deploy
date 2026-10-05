@@ -1,0 +1,31 @@
+## .NET Core / Visual Studio GitIgnore
+# Build output folders
+[Bb]in/
+[Oo]bj/
+publish/
+out/
+
+# Visual Studio user-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache/options directories
+.vs/
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# .NET User Secrets
+secrets.json
+appsettings.Development.json
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
